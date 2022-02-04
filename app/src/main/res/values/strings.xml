@@ -1,3 +1,8 @@
 <resources>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="next">Next</string>
+    <string name="don_t_call_me_that">Don\'t Call Me That</string>
+    <string name="thank_you">Thank You!</string>
+    <string name="welcome">Welcome!</string>
     <string name="app_name">Lab_3</string>
 </resources>
