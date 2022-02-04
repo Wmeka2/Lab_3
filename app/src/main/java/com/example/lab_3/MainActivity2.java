@@ -30,43 +30,24 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
-        //CHANGED :
-        // We have declared these variables above
-        // So we can use them in methods outside main method to set values
-        // If we also Declare them here they will give errors may crash app for
-        // setting values in textview
         textView = findViewById(R.id.textView);
         editText = findViewById(R.id.editText);
         button = findViewById(R.id.button);
-
-        //To load Values from SharedPreferences when app starts
         loadData();
-        //set textview with values of text variable
         updateViews();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //When button is clicked we save Data in Shared Preference
                 saveData();
 
-                // After saving data in share preference
-                // we fetch them to send to next Activity
-                // We have to include this method here otherwise,
-                // it will send old values to NameActivity
                 loadData();
 
                 Intent intent = new Intent(MainActivity2.this, NameActivity.class);
 
-                //sending value of text (updated by loadData() method) variable to NameActivity 
                 intent.putExtra(TEXT, text);
                 startActivity(intent);
 
-                //removed finish() method for back and forth in activity
-
-                //set textview from edittext
                 textView.setText(editText.getText().toString());
 
             }
